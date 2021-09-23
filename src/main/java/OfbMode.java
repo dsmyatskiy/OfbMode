@@ -35,7 +35,7 @@ public class OfbMode {
 
     public static byte[] fileDecryption(byte[] ct, int k) {
         byte iv = ct[ct.length - 1];
-        OfbMode em = new OfbMode(iv, k);
-        return em.decryptOFB(ct);
+        OfbMode ofbMode = new OfbMode(iv, k);
+        return ofbMode.decryptOFB(ct);
     }
 }

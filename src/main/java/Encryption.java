@@ -13,8 +13,8 @@ public class Encryption {
             fin = new FileInputStream(file);
             byte[] fileContent = new byte[(int) file.length()];
             fin.read(fileContent);
-            OfbMode em = new OfbMode((byte) 1997, key);
-            cipherText = em.encryptOFB(fileContent);
+            OfbMode ofbMode = new OfbMode((byte) 1997, key);
+            cipherText = ofbMode.encryptOFB(fileContent);
             FileOutputStream fos = new FileOutputStream(outputFile);
             fos.write(cipherText);
             fos.close();
